@@ -10,12 +10,12 @@ public class EvaluadorExpresiones {
     
     public static boolean evaluate(ExpressionNode node, Map<Character, Boolean> variableValues) {
         if (node == null) {
-            throw new IllegalArgumentException("Expression node cannot be null");
+            throw new IllegalArgumentException("expresion no puede estar nula");
         }
         
         if (node.type == NodeType.VARIABLE) {
             if (!variableValues.containsKey(node.value)) {
-                throw new IllegalArgumentException("No value assigned for variable: " + node.value);
+                throw new IllegalArgumentException("No hay valor asociado: " + node.value);
             }
             return variableValues.get(node.value);
         }
@@ -41,13 +41,13 @@ public class EvaluadorExpresiones {
                 return leftValue == rightValue; 
                 
             default:
-                throw new IllegalArgumentException("Unknown operator: " + node.value);
+                throw new IllegalArgumentException("operador desconocido: " + node.value);
         }
     }
     
     public static ExpressionNode parse(String expression) {
         if (expression == null || expression.isEmpty()) {
-            throw new IllegalArgumentException("Expression cannot be empty");
+            throw new IllegalArgumentException("Expresion no puede estar vacia");
         }
         
         String postfix = ExpressionConverter.infixToPostfix(expression);
@@ -62,12 +62,12 @@ public class EvaluadorExpresiones {
                 
                 if (c == NOT) {
                     if (stack.isEmpty()) {
-                        throw new IllegalArgumentException("Invalid expression: missing operand for NOT operator");
+                        throw new IllegalArgumentException("Expresion invalida");
                     }
                     node.right = stack.pop();
                 } else {
                     if (stack.size() < 2) {
-                        throw new IllegalArgumentException("Invalid expression: insufficient operands for binary operator");
+                        throw new IllegalArgumentException("Expresion invalida");
                     }
                     node.right = stack.pop();
                     node.left = stack.pop();
@@ -78,7 +78,7 @@ public class EvaluadorExpresiones {
         }
         
         if (stack.size() != 1) {
-            throw new IllegalArgumentException("Invalid expression: mismatched operators or operands");
+            throw new IllegalArgumentException("Expresion invalida");
         }
         
         return stack.pop();
