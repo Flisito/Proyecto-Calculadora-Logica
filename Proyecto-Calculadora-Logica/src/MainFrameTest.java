@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 public class MainFrameTest extends JFrame {
     final private Font mainFont = new Font("Segoe print", Font.BOLD, 18);
     JTextField tfFirstName, tfLastName;
-    JLabel lbWelcome;
+    JLabel lbWelcome; 
 
     public void initialize(){
         /******************** Form Panel ********************/
