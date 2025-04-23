@@ -44,7 +44,7 @@ public class EvaluadorExpresiones {
                 throw new IllegalArgumentException("operador desconocido: " + node.value);
         }
     }
-    
+     
     public static ExpressionNode parse(String expression) {
         if (expression == null || expression.isEmpty()) {
             throw new IllegalArgumentException("Expresion no puede estar vacia");
