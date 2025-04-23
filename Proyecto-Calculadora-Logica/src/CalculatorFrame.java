@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 public class CalculatorFrame extends JFrame {
     private JTextField displayField;
-    private JPanel buttonPanel;
+    private JPanel buttonPanel; 
     
     public CalculatorFrame() {
         setTitle("Calculadora de Tablas de Verdad");
