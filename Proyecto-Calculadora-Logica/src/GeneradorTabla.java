@@ -35,7 +35,7 @@ public class GeneradorTabla {
             }
         }
         
-        System.out.println("\nGenerador tabla verdad V.0.1");
+        System.out.println("\nGenerador tabla verdad V.0.2");
     }
     
     private static String getExpression() {

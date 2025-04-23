@@ -10,7 +10,7 @@ public class CalculadoraCommandLine {
     private static final char BICONDITIONAL = '↔'; 
     
     public static void main(String[] args) {
-        System.out.println("Bienvenido a la Calculadora Lógica");
+        System.out.println("--- Calculadora Lógica ---");
         
         while (true) {
             String expression = getExpressionFromUser();
@@ -42,7 +42,7 @@ public class CalculadoraCommandLine {
             }
         }
         
-        System.out.println("¡Gracias por usar la Calculadora Lógica!");
+        System.out.println("Calculadora V.0.1");
     }
     
     
